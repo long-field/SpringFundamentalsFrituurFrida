@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments::head(title='Zoek de friet')"></head>
+<body>
+<nav th:replace="fragments::menu"></nav>
+<h1>Zoek de friet</h1>
+<form th:action="@{/frieten/zoeken/opendeur}" method="post">
+    <button th:each="deur:${zoekDeFriet.deuren}" name="index" th:object="${deur}" th:value="*{index}"><img
+            th:if="*{open} and *{metFriet}" th:src="@{/images/gevonden.png}" alt="gevonden"> <img
+            th:if="*{open} and not *{metFriet}" th:src="@{/images/deuropen.png}" alt="deur open"> <img
+            th:if="not *{open}" th:src="@{/images/deurtoe.png}" alt="deur toe"></button>
+</form>
+<form th:action="@{/frieten/zoeken/nieuwspel}" method="post">
+    <button>Nieuw spel</button>
+</form>
+</body>
+</html>

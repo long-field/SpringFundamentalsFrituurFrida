@@ -1,0 +1,21 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <nav th:fragment="menu">
+        <ul>
+            <li><a th:href="@{/}">Welkom</a></li>
+            <li><a th:href="@{/sauzen}">Sauzen</a></li>
+            <li><a th:href="@{/talen}">Taal</a></li>
+            <li><a th:href="@{/sauzen/alfabet}">Saus alfabet</a></li>
+            <li><a th:href="@{/snacks/alfabet}">Snack alfabet</a></li>
+            <li><a th:href="@{/snacks/beginnaam/form}">Begin naam</a></li>
+            <li><a th:href="@{/frieten/zoeken}">Zoek de friet</a></li>
+            <li><a th:href="@{/sauzen/raden}">Raad de saus</a></li>
+            <li><a th:href="@{/gastenboek}">Gastenboek</a></li>
+        </ul>
+    </nav>
+    <head th:fragment="head(title)">
+        <link rel="icon" th:href="@{/images/frida.ico}" type="image/x-icon">
+        <title th:text="${title}"></title>
+        <link rel="stylesheet" th:href="@{/css/frida.css}">
+    </head>
+
+</div>

@@ -1,0 +1,76 @@
+body {
+    background-color: #C0BD92;
+    font-family: sans-serif;
+}
+
+h1 {
+    color: red;
+}
+
+nav ul {
+    background-color: #3e8e41;
+    padding: 0.4em 0;
+}
+
+nav li {
+    display: inline;
+}
+
+nav li a {
+    color: white;
+    font-weight: bold;
+    padding-left: 0.5em;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+nav li a:hover {
+    color: #F7FFCC;
+}
+
+dd, dt {
+    margin-left: 0;
+}
+
+dt {
+    margin-top: 0.5em;
+}
+
+dd {
+    font-weight: bold;
+}
+
+.naastMekaar {
+    padding-left: 0;
+}
+
+.naastMekaar li {
+    display: inline;
+}
+
+label span, .fout {
+    background-color: red;
+    border-bottom-right-radius: 0.5em;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    box-shadow: 5px 5px #777777;
+    margin-left: 0.5em;
+    padding: 0.5em;
+    color: white;
+}
+
+label span {
+    margin-left: 0.5em;
+}
+
+label {
+    cursor: pointer;
+}
+
+input {
+    display: block;
+    margin-top: 0.2em;
+    margin-bottom: 1em;
+    font-size: 1.1em;
+}
+input[type=checkbox] { display: inline; }

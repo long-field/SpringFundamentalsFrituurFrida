@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments::head(title='Raad de saus')"></head>
+<body th:object="${sausRaden}">
+<nav th:replace="fragments::menu"></nav>
+<h1>Raad de saus</h1>
+<div th:if="*{verloren}">U bent verloren, de saus was
+    <th:block th:text="*{saus}"></th:block>
+    .
+</div>
+<div th:if="*{gewonnen}">U bent gewonnen, de saus was
+    <th:block th:text="*{saus}"></th:block>
+    .
+</div>
+<div th:if="not *{verloren} and not *{gewonnen}">Te raden saus:
+    <th:block th:text="*{puntjes}"></th:block>
+    <form th:object="${sausRadenForm}" th:action="@{/sauzen/raden}" method="post"><label>letter:<span
+            th:errors="*{letter}"></span> <input th:field="*{letter}" autofocus required size="1" maxlength="1">
+    </label>
+        <button>Raden</button>
+    </form>
+</div>
+<form th:action="@{/sauzen/raden/nieuwspel}" method="post">
+    <button>Nieuw spel</button>
+</form>
+<img th:src="@{/images/{verkeerdePogingen}.png(verkeerdePogingen=*{verkeerdePogingen})}"
+     th:alt="|*{verkeerdePogingen} verkeerde pogingen|"></body>
+</html>

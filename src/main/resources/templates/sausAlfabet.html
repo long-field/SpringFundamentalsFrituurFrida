@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments::head(title='Saus alfabet')"></head>
+<body>
+<nav th:replace="fragments::menu"></nav>
+<h1>Alfabet</h1>
+<ul class="naastMekaar">
+    <li th:each="letter:${alfabet}"><a th:href="@{/sauzen/alfabet/{letter}(letter=${letter})}" th:text="${letter}"></a>
+        </li>
+</ul>
+<th:block th:if="${letter}">
+    <h2>Sauzen die beginnen met
+        <th:block th:text="${letter}"></th:block>
+    </h2>
+    <ul>
+        <li th:each="saus:${sauzen}" th:text="${saus.naam}"></li>
+    </ul>
+</th:block>
+</body>
+</html>
